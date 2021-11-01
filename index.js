@@ -10,7 +10,8 @@ app.get('/recipe/:index', (req, res) => {
       return;
     }
     const {index} = req.params;
-    if (!(index >= 0)){
+    if (!(index >= 0) ){
+      // || content.recipe[index] === null ???
       res.status(404).send('Oi! Type properly! <br> Enter a number from 0');
     }
     res.send(content.recipes[index]);
